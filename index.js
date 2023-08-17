@@ -5,7 +5,24 @@ for (var i = 0; i < numberOfDrum; i++) {
     document.querySelectorAll(".drum")[i].addEventListener("click", function () {
      
         var buttonInnerHTLM = this.innerHTML;
-        switch (buttonInnerHTLM) {
+        makeSound(buttonInnerHTLM);
+            
+     });
+}
+     document.addEventListener("keydown", function(event){
+        makeSound(event.key);
+});
+
+
+
+
+//anonymous fuction - ("click, function () {alert("I got clicked!";
+
+function makeSound(key) {
+  
+     
+        
+        switch (key) {
         case "w":
             var tom1 = new Audio("sounds/tom-1.mp3");
             tom1.play();
@@ -39,13 +56,5 @@ for (var i = 0; i < numberOfDrum; i++) {
         
         default: console.log(buttonInnerHTLM);
             break;
-     }
-});
-
 }
-
-
-//anonymous fuction - ("click, function () {alert("I got clicked!";
-
-var audio = new Audio("sounds/tom-1.mp3");
-audio.play();
+}
